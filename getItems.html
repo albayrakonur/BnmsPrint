@@ -185,6 +185,7 @@
                                             <th>Ürün Kodu</th>
                                             <th>Elektronik Adı</th>
                                             <th>Adet</th>
+                                            <th>Satın Alım Tarihi</th>
                                         </tr>
                                         </thead>
                                         <tbody id="elektronikList">
@@ -203,6 +204,7 @@
                                             <th>Ürün Kodu</th>
                                             <th>Hammadde Adı</th>
                                             <th>Adet</th>
+                                            <th>Satın Alım Tarihi</th>
                                         </tr>
                                         </thead>
                                         <tbody id="hammaddeList">
@@ -221,6 +223,7 @@
                                             <th>Ürün Kodu</th>
                                             <th>Hırdavat Adı</th>
                                             <th>Adet</th>
+                                            <th>Satın Alım Tarihi</th>
                                         </tr>
                                         </thead>
                                         <tbody id="hirdavatList">
@@ -239,6 +242,7 @@
                                             <th>Ürün Kodu</th>
                                             <th>Kimyasal Adı</th>
                                             <th>Adet</th>
+                                            <th>Satın Alım Tarihi</th>
                                         </tr>
                                         </thead>
                                         <tbody id="kimyasalList">
@@ -277,13 +281,13 @@
                 console.log(data);
                 for (var i = 0; i < data.length; i++) {
                     if (data[i].type.localeCompare("Elektronik") == 0) {
-                        eleList += "<tr><td>" + data[i].code + "</td><td> <a href=\"item.html?id=" + data[i]._id + "\">" + data[i].name + "</a> </td><td>" + data[i].count + "</td></tr>";
+                        eleList += "<tr><td>" + data[i].code + "</td><td> <a href=\"item.html?id=" + data[i]._id + "\">" + data[i].name + "</a> </td><td>" + data[i].count + "</td> <td>" + data[i].purchasedAt + "</td> </tr>";
                     }else if (data[i].type.localeCompare("Hammadde") == 0) {
-                        hrdvtList += "<tr><td>" + data[i].code + "</td><td> <a href=\"item.html?id=" + data[i]._id + "\">" + data[i].name + "</a> </td><td>" + data[i].count + "</td></tr>";
+                        hrdvtList += "<tr><td>" + data[i].code + "</td><td> <a href=\"item.html?id=" + data[i]._id + "\">" + data[i].name + "</a> </td><td>" + data[i].count + "</td> <td>" + data[i].purchasedAt + "</td> </tr>";
                     }else if (data[i].type.localeCompare("Hırdavat") == 0)  {
-                        hrdvtList += "<tr><td>" + data[i].code + "</td><td> <a href=\"item.html?id=" + data[i]._id + "\">" + data[i].name + "</a> </td><td>" + data[i].count + "</td></tr>";
+                        hrdvtList += "<tr><td>" + data[i].code + "</td><td> <a href=\"item.html?id=" + data[i]._id + "\">" + data[i].name + "</a> </td><td>" + data[i].count + "</td> <td>" + data[i].purchasedAt + "</td> </tr>";
                     }else if (data[i].type.localeCompare("Kimyasal") == 0) {
-                        kmyslList += "<tr><td>" + data[i].code + "</td><td> <a href=\"item.html?id=" + data[i]._id + "\">" + data[i].name + "</a> </td><td>" + data[i].count + "</td></tr>";
+                        kmyslList += "<tr><td>" + data[i].code + "</td><td> <a href=\"item.html?id=" + data[i]._id + "\">" + data[i].name + "</a> </td><td>" + data[i].count + "</td> <td>" + data[i].purchasedAt + "</td> </tr>";
                     }
                 }
                 elektronik.innerHTML = eleList;
