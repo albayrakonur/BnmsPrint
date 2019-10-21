@@ -234,19 +234,18 @@
     $(function() {
         $("#addItemForm").on("submit", function(e) {
             e.preventDefault();
-            console.log(document.getElementById("purchasedAt").value);
             var data = new FormData();
             var name = document.getElementById("itemName").value;
             var code = document.getElementById("itemCode").value;
             var count = document.getElementById("itemCount").value;
             var type = document.getElementById("itemType");
+            var date = document.getElementById("purchasedAt").value;
             type = type.options[type.selectedIndex].value;
-            console.log("type: " + type);
             data.append("name", name);
             data.append("code", code);
             data.append("count", count);
             data.append("type", type);
-            console.log(name + " " + code + " " + type + " " + count);
+            data.append("purchasedAt", date);
             $.ajax({
                 async: true,
                 crossDomain: true,
